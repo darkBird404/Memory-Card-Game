@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Memory Card Game</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js' defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Handlee&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 id="lives">Lives: <span class="playerLivesCount"></span></h1>
+    <h4 id="count">Reveal Count: <span class="revealCount"></span></h4>
+    <h4 class="moments">Moves: <span class="numberOfMoves"></span></h4>
+    <section class="boxes">
+    </section>
+
+    <section class="end hide ">
+        <h4 id="lost">You Lost</h4>
+
+        <button id="restart" class="button">Play Again</button>
+    </section>
+
+    <section class="won hide">
+        <h3 id="won">You Won</h3>
+
+    </section>
+    <button id="revealed" class="button">Reveal Cards</button>
+    <img src="./images/off.png" id="pause">
+    <audio src="./audio/click.wav" id="clickm"></audio>
+    <audio src="./audio/rainyDay.mp3" id="backmusic"></audio>
+    <audio src="./audio/willOfFire.mp3" id="wonmusic"></audio>
+    <audio src="./audio/samidare.mp3" id="lostmusic"></audio>
+    <audio src="./audio/reveal.wav" id="sound"></audio>
+
+</body>
+
+</html>

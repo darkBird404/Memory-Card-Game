@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --boxcolor: linear-gradient(104deg, rgba(94,94,101,0.38139005602240894) 0%, rgba(241,240,242,0.30575980392156865) 73%, rgba(252,252,252,0.5690651260504201) 97%, rgba(252,252,252,0.258140756302521) 97%);
+}
+#lives {
+    font-family: 'Great Vibes', cursive;
+    font-size: 50px;
+    margin-top: 7px;
+}
+#count{
+    font-family: 'Handlee', cursive;
+}
+.boxes{
+    display: grid;
+    grid-template-columns: repeat(4, 7rem); 
+    grid-template-rows: repeat(4, 9rem);
+    /* the above code gives us 4 columns and 4 rows with size 8rem
+    the images are still overflowing*/
+    grid-gap: 1rem;
+    perspective: 800px;
+    margin-top: 20px;
+}
+
+body{
+    height: 100vh;
+    color: aliceblue;
+    background: #74ebd5 ; /*fallback for old browsers*/ 
+    background: linear-gradient(to right, #acb6ef, #74ebd5); 
+    background: -webkit-linear-gradient(to right, #acb6ef, #74ebd5); /* for chrome, safari etc*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card{
+    position: relative;
+    transition: transform 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;  
+    box-shadow: rgba(0,0,0,0.2) 0px 5px 15px;
+    border-radius: 15px;
+    
+}
+.image, 
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-radius: 15px;
+    
+}
+
+#won{
+    position: relative;
+    left: 5px;
+    margin-bottom: 2px;
+ }
+
+#lost {
+    position: relative;
+    left: 20px;
+    margin-bottom: 2px;
+}
+
+.later{
+    position: absolute;
+    right: auto;
+    bottom: 35%;
+}
+
+.moments{
+    position: absolute;
+    right: 575px;
+    top: 50px;
+}
+
+.face{
+    transition: all 2.5s step-start ;
+    z-index: 100; 
+}
+
+.back{
+    
+    background-image: url("./images/card2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    backface-visibility: hidden; /*this will get the image on one side and the background on the other*/ 
+}
+
+.toggleCard{
+    
+    transform: rotateY(180deg) ;
+}
+
+.hide{
+    display: none; 
+}
+
+.button{   
+    font-weight: 600;
+    box-sizing: border-box;
+    margin-top: 15px;
+    margin-bottom: 3px; 
+    height: 30px;
+    width: 100px;
+    border-radius: 7px;
+    border: solid #bed4da  1px;
+    font-family: 'Handlee', cursive;
+    background: rgb(94,94,101);
+    background: var(--boxcolor);
+    background: -webkit-var(--boxcolor);
+    
+}
+
+.finished {
+    pointer-events: none;
+}
+
+#pause{
+    height: 30px;
+    width: 30px;
+}
